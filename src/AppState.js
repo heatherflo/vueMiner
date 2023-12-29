@@ -4,5 +4,20 @@ import { reactive } from 'vue'
 export const AppState = reactive({
   user: {},
   /** @type {import('./models/Account.js').Account} */
-  account: {}
+  account: {},
+
+  power: 0,
+
+  clickUpgrades: [
+    new Upgrade({
+      name: 'Pong Blade',
+      qty: 0,
+      multiplier: 1,
+      price: 50,
+      picture: '🏓'
+    }),
+  ]
+
+
+
 })
