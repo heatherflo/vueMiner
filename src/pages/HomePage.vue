@@ -1,20 +1,53 @@
 <template>
-  <!-- <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <div class="home-card p-5 card align-items-center shadow rounded elevation-3">
-      <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo"
-        class="rounded-circle">
-      <h1 class="my-5 bg-dark text-white p-3 rounded text-center">
-        Vue 3 Starter
-      </h1>
-    </div>
-  </div> -->
+  <div class="container-fluid bg-info">
+
+    <section class="row justify-content-center bg-info py-3">
+      <div class="col-12 d-flex justify-content-center">
+        <h2 class="pb-3 text-center text-dark ">Puppy Palace</h2>
+      </div>
+      <img @click="power++" class="img-fluid home"
+        src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/dog_1f415.gif" alt="dog emoji">
+      <button class="btn btn-dark">points +{{ power }}</button>
+    </section>
+    <section class="p-3 row justify-content-around text-center">
+      <div class="col-4">
+        <button @click="power += 2" class="btn btn-dark">{{ power }}</button>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-dark">upgrade</button>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-dark">upgrade</button>
+      </div>
+    </section>
+    <section class="p-3 row justify-content-around text-center">
+      <div class="col-4">
+        <button class="btn btn-dark">upgrade</button>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-dark">upgrade</button>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-dark">upgrade</button>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
+
+import { ref } from 'vue';
+import { AppState } from '../AppState';
+
 export default {
   setup() {
+    const power = ref(0)
+    const price = ref(0)
+    const upgrade1 = ref(20)
     return {
-
+      power,
+      price,
+      upgrade1
     }
   }
 }
@@ -22,22 +55,9 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  display: grid;
-  height: 80vh;
+  height: 60vh;
+  width: auto;
   place-content: center;
   text-align: center;
-  user-select: none;
-
-  .home-card {
-    width: clamp(500px, 50vw, 100%);
-
-    >img {
-      height: 200px;
-      max-width: 200px;
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
 }
 </style>
